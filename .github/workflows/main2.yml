@@ -22,5 +22,6 @@ jobs:
         uses: JavierIbanezSoloaga/hello-world-javascript-action@v1
         with:
           who-to-greet: 'Javier'
-      - run: echo time ${{ steps.jsGreet.outputs.time }}
+      - run: |
+          echo time ${{ steps.jsGreet.outputs.time }}
         shell: bash
