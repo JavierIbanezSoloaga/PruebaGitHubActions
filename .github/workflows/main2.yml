@@ -13,3 +13,14 @@ jobs:
           who-to-greet: 'Javier'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
+        
+  hello_world_javascript:
+    runs-on: ubuntu-latest
+    name: Say hello but from javascript action
+    steps:
+      - id: jsGreet
+        uses: JavierIbanezSoloaga/hello-world-javascript-action@v1
+        with:
+          who-to-greet: 'Javier'
+      - run: echo time ${{ steps.jsGreet.outputs.time }}
+        shell: bash
