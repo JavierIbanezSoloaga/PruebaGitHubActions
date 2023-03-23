@@ -1,3 +1,4 @@
+name: 'Run composite Action'
 on: [push]
 
 jobs:
