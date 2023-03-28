@@ -1,0 +1,21 @@
+name: 'Run Deploy Action'
+on:
+  workflow_dispatch:
+    inputs:
+      who-to-call:
+        required: true
+      token:
+        required: true
+
+
+
+jobs:
+  deploy_throught_action_job:
+    runs-on: ubuntu-latest
+    name: Deploying throught action
+    steps:
+      - id: deployAction
+        uses: JavierIbanezSoloaga/cross-platform-actions@v1
+        with:
+          who-to-call: ${{ inputs.who-to-call }}
+          token: ${{ inputs.token }}
