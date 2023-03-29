@@ -11,8 +11,20 @@ jobs:
     name: Workflow ID Provider
     runs-on: ubuntu-latest
     outputs:
-      output: ${{ steps.step1.outputs }}
+      outpt: ${{ steps.step1.outputs.id }}
     steps:
       - id: step1
         name: ${{ github.event.inputs.id }}
-        run: echo run identifier ${{ inputs.id }} >> "$GITHUB_OUTPUT"
+        run: echo id = asf${{ inputs.id }} >> "$GITHUB_OUTPUT"
+  
+  printId:
+    name: Print ID
+    runs-on: ubuntu-latest
+    needs: id
+    outputs:
+      outpit: ${{ needs.id.outputs.outpt }}
+    steps:
+      - id: test
+        env:
+          OUTPUT1: ${{needs.id.outputs.outpt}}
+        run: echo ${{env.OUTPUT1}}
