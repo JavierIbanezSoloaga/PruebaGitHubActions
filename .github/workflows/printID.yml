@@ -27,4 +27,4 @@ jobs:
       - id: test
         env:
           OUTPUT1: ${{needs.id.outputs.outpt}}
-        run: echo ${{env.OUTPUT1}}
+        run: echo ${{steps.test.env.OUTPUT1}}
