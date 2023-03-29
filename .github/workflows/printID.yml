@@ -10,6 +10,9 @@ jobs:
   id:
     name: Workflow ID Provider
     runs-on: ubuntu-latest
+    outputs:
+      output: ${{ steps.step1.outputs }}
     steps:
-      - name: ${{github.event.inputs.id}}
-        run: echo run identifier ${{ inputs.id }}
+      - id: step1
+        name: ${{ github.event.inputs.id }}
+        run: echo run identifier ${{ inputs.id }} >> "$GITHUB_OUTPUT"
