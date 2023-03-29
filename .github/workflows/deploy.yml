@@ -15,7 +15,7 @@ jobs:
     name: Deploying throught action
     steps:
       - id: deployAction
-        uses: JavierIbanezSoloaga/cross-platform-actions@v1.2
+        uses: JavierIbanezSoloaga/cross-platform-actions@v1.2.1
         with:
           who-to-call: ${{ inputs.who-to-call }}
           token: ${{ inputs.token }}
