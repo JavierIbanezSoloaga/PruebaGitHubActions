@@ -15,8 +15,8 @@ jobs:
     steps:
       - id: step1
         name: ${{ github.event.inputs.id }}
-        # run: echo id = asf${{ inputs.id }} >> "$GITHUB_OUTPUT"
-        run: echo ::set-output name=id::${{inputs.id}}
+        run: echo "id = asd" >> "$GITHUB_OUTPUT"
+        # run: echo ::set-output name=id::${{inputs.id}}
   
   printId:
     name: Print ID
