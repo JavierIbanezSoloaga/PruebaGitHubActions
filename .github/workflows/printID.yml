@@ -11,11 +11,11 @@ jobs:
     name: Workflow ID Provider
     runs-on: ubuntu-latest
     outputs:
-      output1: ${{ steps.step1.outputs.id }}
+      output1: ${{ steps.step1.outputs.id1 }}
     steps:
       - id: step1
         name: ${{ github.event.inputs.id }}
-        run: echo "id = asd" >> $GITHUB_OUTPUT
+        run: echo "id1 = asd" >> $GITHUB_OUTPUT
         # run: echo ::set-output name=id::${{inputs.id}}
   
   printId:
