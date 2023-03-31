@@ -11,7 +11,7 @@ jobs:
     name: Workflow ID Provider
     runs-on: ubuntu-latest
     outputs:
-      outpt: ${{ steps.step1.outputs.id }}
+      output1: ${{ steps.step1.outputs.id }}
     steps:
       - id: step1
         name: ${{ github.event.inputs.id }}
@@ -24,4 +24,4 @@ jobs:
     needs: id
     steps:
       - id: test
-        run: echo ${{needs.id.outputs.outpt}}
+        run: echo ${{needs.id.outputs.output1}}
