@@ -24,7 +24,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: example-artifact
-          path: testFolder/hello.txt
+          path: testFolder
   
   printId:
     name: Print ID
