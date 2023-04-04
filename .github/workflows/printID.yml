@@ -18,6 +18,11 @@ jobs:
         run: |
           echo "id1={{inputs.id}}" >> $GITHUB_OUTPUT
           echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
+      - name: Create an artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: example-artifact
+          path: testFolder
   
   printId:
     name: Print ID
