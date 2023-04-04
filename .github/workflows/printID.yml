@@ -16,7 +16,7 @@ jobs:
       - id: step1
         name: ${{ github.event.inputs.id }}
         run: |
-          echo "id1={{inputs.id}}" >> $GITHUB_OUTPUT
+          echo "id1=${{inputs.id}}" >> $GITHUB_OUTPUT
           echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
       - name: Checkout repository
         uses: actions/checkout@v3

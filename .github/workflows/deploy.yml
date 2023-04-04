@@ -22,8 +22,8 @@ jobs:
       - name: Get the output
         run:  |
           curl -L \
-          -H Accept: application/vnd.github+json \
-          -H Authorization: Bearer ${{ inputs.token }}\
-          -H X-GitHub-Api-Version: 2022-11-28 ${{ steps.deployAction.outputs.deploy-artifact }} > artifact.zip
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer ${{ github.event.inputs.token }}"\
+          -H "X-GitHub-Api-Version: 2022-11-28" ${{ steps.deployAction.outputs.deploy-artifact }} > artifact.zip
       - name: Unzip the artifact
         run: cat artifact.zip
