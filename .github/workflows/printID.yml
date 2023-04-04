@@ -15,7 +15,9 @@ jobs:
     steps:
       - id: step1
         name: ${{ github.event.inputs.id }}
-        run: echo "id1={{inputs.id}}" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "id1={{inputs.id}}" >> $GITHUB_OUTPUT
+          echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
   
   printId:
     name: Print ID
