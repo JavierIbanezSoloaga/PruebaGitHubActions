@@ -22,7 +22,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: example-artifact
-          path: testFolder
+          path: testFolder/hello.txt
   
   printId:
     name: Print ID
