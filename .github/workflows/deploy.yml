@@ -19,3 +19,5 @@ jobs:
         with:
           who-to-call: ${{ inputs.who-to-call }}
           token: ${{ inputs.token }}
+      - name: Get the output time
+        run: echo ${{ steps.deployAction.outputs.artifact }}
