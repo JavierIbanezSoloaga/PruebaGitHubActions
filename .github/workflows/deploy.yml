@@ -19,9 +19,9 @@ jobs:
           token: ${{ secrets.TOKEN }}
       - name: Get the output
         run:  |
-          artifact=$(curl -sL \
+          artifact=$(curl -L \
           -H "Accept: application/vnd.github+json" \
           -H "Authorization: token ${{ secrets.TOKEN }}"\
           -H "X-GitHub-Api-Version: 2022-11-28" ${{ steps.deployAction.outputs.deploy-artifact }})
       - name: Unzip the artifact
-        run: cat artifact
+        run: cat $artifact
