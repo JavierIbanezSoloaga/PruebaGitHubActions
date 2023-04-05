@@ -4,8 +4,6 @@ on:
     inputs:
       who-to-call:
         required: true
-      token:
-        required: true
 
 
 
@@ -18,12 +16,12 @@ jobs:
         uses: JavierIbanezSoloaga/cross-platform-actions@main
         with:
           who-to-call: ${{ inputs.who-to-call }}
-          token: ${{ inputs.token }}
+          token: ${{ secrets.TOKEN }}
       - name: Get the output
         run:  |
           curl -L \
           -H "Accept: application/vnd.github+json" \
-          -H "Authorization: Bearer '${{ inputs.token }}'"\
+          -H "Authorization: Bearer ${{ secrets.TOKEN }}"\
           -H "X-GitHub-Api-Version: 2022-11-28" ${{ steps.deployAction.outputs.deploy-artifact }} > artifact.zip
       - name: Unzip the artifact
         run: cat artifact.zip
