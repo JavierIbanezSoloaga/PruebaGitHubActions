@@ -24,7 +24,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: example-artifact
-          path: testFolder
+          path: ex.json
   
   printId:
     name: Print ID
